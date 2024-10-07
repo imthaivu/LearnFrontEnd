@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        text-align: center;
+      }
+      header {
+        background: green;
+        height: 60px;
+      }
+      .section-one {
+        display: flex;
+        height: 200px;
+        background: transparent;
+        /* trong suot */
+      }
+      .content {
+        width: 70%;
+        background: blue;
+      }
+      aside {
+        background: pink;
+        width: 30%;
+      }
+      .section-two {
+        display: flex;
+        justify-content: space-between;
+      }
+      .box {
+        background: yellow;
+        width: 24%;
+        height: 50px;
+        margin-top: 2%;
+      }
+      @media screen and (max-width: 768px) {
+        .section-two {
+          flex-wrap: wrap;
+        }
+        .box {
+          width: 48%;
+        }
+      }
+      @media screen and (max-width: 480px) {
+        .box {
+          width: 98%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>header</header>
+    <div class="section-one">
+      <div class="content">content</div>
+      <aside>aside</aside>
+    </div>
+    <div class="section-two">
+      <div class="box">box 1</div>
+      <div class="box">box 2</div>
+      <div class="box">box 3</div>
+      <div class="box">box 4</div>
+    </div>
+  </body>
+</html>

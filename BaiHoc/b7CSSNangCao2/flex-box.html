@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        /* giam chieu width = content */
+        /* display: inline-flex; */
+        /* flex direction thứ tự */
+        flex-direction: row;
+
+        /* flexwrap:  */
+        flex-wrap: wrap;
+        background: #000;
+        height: 300px;
+        /* justify-content: flex-end; */
+        justify-content: space-evenly;
+        /* justify cho vi tri */
+
+        /* cross axis : can le theo chieu doc */
+        /* align items (nhung chi can chinh theo 1 dong) tuong tu justify content*/
+        /* align-items: center; */
+        /* align-content: space-evenly; */
+        /* align-content:  ;cho nhieu dong */
+      }
+
+      .item {
+        width: 150px;
+        height: 60px;
+        line-height: 60px;
+        background: violet;
+      }
+      /* cho rieng mot item */
+      .item:nth-child(2) {
+        height: auto;
+        align-self: stretch;
+      }
+      /* sort */
+      .item:nth-child(1) {
+        order: 1;
+        /* 1 > 0 (lon hon cac gia tri con lai nen xep duoi cung) */
+      }
+      .item:nth-child(2) {
+        order: 0;
+      }
+      .item:nth-child(3) {
+        order: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">item 1</div>
+      <div class="item">item 2</div>
+      <div class="item">item 3</div>
+      <div class="item">item 4</div>
+      <div class="item">item 5</div>
+      <div class="item">item 6</div>
+      <div class="item">item 7</div>
+    </div>
+  </body>
+</html>
+<!-- bai 7 1:51 -->

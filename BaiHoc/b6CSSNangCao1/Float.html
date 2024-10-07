@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        height: 300px;
+        border: 1px red solid;
+      }
+      /* float: chiem vung khong gian */
+      .child-1 {
+        height: 100px;
+        background: green;
+        float: left;
+      }
+      .child-2 {
+        height: 200px;
+        background: red;
+        float: right;
+      }
+      .child-3 {
+        height: 300px;
+        background: blue;
+        float: right;
+      }
+      .contain nav {
+        float: left;
+      }
+      .contain main {
+        float: left;
+      }
+      .contain aside {
+        float: left;
+      }
+      .clear-fix {
+        clear: both;
+      }
+      header {
+        height: 100px;
+        background: red;
+        text-align: center;
+        line-height: 100px;
+      }
+      nav {
+        height: 100px;
+        width: 25%;
+        background: green;
+        text-align: center;
+        line-height: 100px;
+      }
+      main {
+        height: 100px;
+        width: 50%;
+        text-align: center;
+        background-color: aqua;
+      }
+      aside {
+        height: 100px;
+        width: 25%;
+        text-align: center;
+        line-height: 100px;
+        background: blue;
+      }
+      footer {
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child child-1">phan tu 1</div>
+      <div class="child child-2">phan tu 2</div>
+      <div class="child child-3">phan tu 3</div>
+      <div class="clear-both"></div>
+    </div>
+    <hr />
+    <header>header</header>
+    <div class="contain">
+      <nav>nav</nav>
+      <main>
+        <article>article 1</article>
+        <article>article 2</article>
+        <article>article 3</article>
+        <div class="clear-fix"></div>
+      </main>
+      <aside>aside</aside>
+      <div class="clear-fix"></div>
+    </div>
+    <footer>footer</footer>
+  </body>
+</html>

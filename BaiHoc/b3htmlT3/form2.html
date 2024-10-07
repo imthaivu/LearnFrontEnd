@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form 2</title>
+  </head>
+  <body>
+    <form
+      action="https://www.w3schools.com/action_page.php"
+      target="_blank"
+      method="get"
+      autocomplete="on"
+      novalidate
+    >
+      <!-- name -->
+      <label for=""
+        >name
+        <input type="text" name="fullName" maxlength="5" />
+      </label>
+      <br />
+      <!-- email -->
+      <label for=""
+        >email
+        <input type="email" name="email" maxlength="5" />
+      </label>
+      <br />
+
+      <!-- select -->
+      <select name="color" id="color" multiple size="1">
+        <option value="red">red</option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+      </select>
+      <br />
+      <!-- color -->
+      <label for="">mau sac <input type="color" /> </label><br />
+      <!-- text area -->
+      <label for=""
+        >note
+        <textarea name="note" id="" rows="10"></textarea>
+      </label>
+      <!-- submit -->
+      <br />
+      <input type="submit" value="gui" />
+      <br />
+    </form>
+  </body>
+</html>

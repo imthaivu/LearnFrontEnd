@@ -1,0 +1,7 @@
+dung layout bootstrap khong trung voi class
+
+dung wowjs
+
+html, body {
+    overflowx : hidden
+}
