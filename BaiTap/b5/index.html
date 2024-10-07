@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 50px;
+      }
+      nav a {
+        text-decoration: none;
+        color: white;
+      }
+      nav li {
+        list-style: none;
+        display: inline-block;
+        margin: 10px;
+      }
+      nav {
+        background-color: orange;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+      }
+      ul {
+        display: flex;
+        justify-content: first baseline;
+      }
+      main {
+        margin-top: 50px;
+        background: grey;
+        height: 800px;
+        position: relative;
+      }
+      main div {
+        width: 80px;
+        height: 80px;
+        border-radius: 5px;
+        color: white;
+        text-align: center;
+        line-height: 80px;
+      }
+      main .one {
+        background: yellow;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+      }
+      main .two {
+        background: #000;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+      main .three {
+        background: green;
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+      }
+      main .four {
+        background: blue;
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+      }
+      footer {
+        position: relative;
+      }
+      /* before */
+      /* after */
+      /* first letter */
+      footer::before {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(255, 255, 128, 0.5);
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        border-radius: 100%;
+      }
+      footer::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(255, 255, 128, 0.5);
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        border-radius: 100%;
+      }
+      p::first-letter {
+        font-size: 30px;
+      }
+      p::first-line {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Trang chu</a></li>
+        <li><a href="#">Gioi thieu</a></li>
+        <li><a href="#">San Pham</a></li>
+        <li><a href="#">Tin Tuc</a></li>
+        <li><a href="#">Lien He</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="one">1</div>
+      <div class="two">2</div>
+      <div class="three">3</div>
+      <div class="four">4</div>
+    </main>
+    <footer>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab velit
+        tempora pariatur odio, provident sapiente perspiciatis ipsum nihil
+        nesciunt minus qui fuga et quisquam eum voluptatum obcaecati reiciendis
+        id ipsam consequuntur maxime incidunt nobis exercitationem libero. Nisi
+        sequi quasi numquam sit, beatae dolore adipisci quaerat provident eos
+        quis, maiores rem ullam, cumque est tempore doloremque incidunt. Iste
+        quasi non consequuntur veniam, dolorem fugit expedita cupiditate vero
+        tempore delectus amet laboriosam aliquam, odit debitis repellat
+        reiciendis ex eaque architecto, sed alias hic illum excepturi! Tenetur
+        quia quod doloremque beatae inventore exercitationem sapiente error,
+        totam praesentium necessitatibus commodi delectus rem ipsa aliquid
+        veritatis rerum a sed eaque placeat dolorum non repellat ducimus! Nobis
+        voluptate unde adipisci cum illum minus amet neque libero labore?
+        Distinctio, aliquam molestias nulla mollitia dicta culpa iure iste vitae
+        nemo quasi commodi ipsum, aliquid tempora sint voluptate impedit. Fugiat
+        culpa sapiente quasi, accusantium totam sint nobis eius, provident
+        tempore sequi rerum eaque accusamus! Ex repellat corporis quisquam! Quod
+        fuga ea pariatur dignissimos exercitationem est possimus minus mollitia
+        dolor maiores ipsa, quia fugit nemo dolorem vitae placeat illum eveniet
+        quae optio modi praesentium commodi quo magni! Dolore asperiores dolorem
+        illum itaque alias deserunt saepe maxime, repudiandae nam, quam dicta!
+      </p>
+    </footer>
+  </body>
+</html>

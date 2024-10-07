@@ -1,0 +1,48 @@
+/* load font  */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+:root {
+    --color-pink:#f7d9c4;
+    --color-ngoc-bich: #dce8eb;
+    --color-xam:#777777;
+
+    --font: 'DM Sans', sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+
+/* set font */
+body {
+    font-family: var(--font);
+}
+
+a {
+    text-decoration: none;
+}
+/* responsive container */
+.container {
+    width: 100%;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width:1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .container {
+      max-width: 100%;
+    }
+  }

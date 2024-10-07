@@ -1,0 +1,30 @@
+/* section two */
+.section-two .inner-heading {
+  text-align: center;
+}
+.section-two .inner-heading .out-line-green {
+  background: gray;
+  width: 60px;
+  height: 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-two .inner-heading .in-line-green {
+  background: green;
+  width: 60%;
+  height: 2px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-two .inner-img img {
+  width: 400px;
+  height: 400px;
+}
+/* end section two */
+@media (max-width: 1000px) {
+  .section-two .inner-content {
+    order: 1;
+    margin-top: 20px;
+  }
+}

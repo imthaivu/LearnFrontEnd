@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form 1</title>
+  </head>
+  <body>
+    <!-- action url -->
+    <!-- target qua trang khac hay khong -->
+    <!-- method GET POST-->
+    <!-- co validate khong? -->
+    <form
+      action="https://www.w3schools.com/action_page.php"
+      target="_blank"
+      method="get"
+      autocomplete="on"
+      novalidate
+    >
+      <label for="name">name</label>
+      <input type="text" id="name" name="fullName" maxlength="5" />
+      <br />
+
+      <label for="email">email</label>
+      <input type="email" id="email" name="email" />
+      <br />
+      <!-- button submit -->
+      <input type="submit" value="gui" />
+      <hr />
+      <label for="color">color</label>
+      <!-- muon chon nhieu thi phai co phim control, size la khung duoc chon -->
+      <select name="color" id="color" multiple size="2">
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+      </select>
+      <br />
+      <!-- mau sac -->
+      <label for="mau_sac">mau sac</label>
+      <input type="color" id="mau_sac" name="mausac" />
+
+      <br />
+      <!-- textarea -->
+      <label for="note">ghi chu voi nha ban hang</label>
+      <textarea name="note" id="note" rows="10"></textarea>
+      <br />
+      <!-- ngay gio -->
+      <label for="datetime-local">chon ngay gio chinh xac</label>
+      <input type="datetime-local" name="datetime-local" id="datetime-local" />
+      <br />
+      <!-- chon am luong ban muon -->
+      <label for="">chon am luong ban muon</label>
+      <input type="range" name="am luong" step="1" min="20" max="40" />
+      <br />
+      <!-- chon radio -->
+      <label for="">chi chon mot phuong an</label>
+      <input type="radio" value="nam" name="gioitinh" /> nam
+      <input type="radio" value="be de" name="gioitinh" /> be de
+      <input type="radio" value="nu" name="gioitinh" /> nu
+
+      <br />
+      <!-- number -->
+      <label for="number">number</label>
+      <input type="number" min="3" max="5" name="number" id="number" />
+      <br />
+      <!-- nhap ten -->
+      <label for="ten">nhap ten </label>
+      <input type="text" name="ten" id="ten" />
+      <!-- canvas -->
+    </form>
+  </body>
+</html>

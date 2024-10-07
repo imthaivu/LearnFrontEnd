@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin-left: 0;
+        margin-right: 0;
+        font-family: sans-serif;
+      }
+      header {
+        background: #0a033c;
+        display: flex;
+        justify-content: space-around;
+        height: 70px;
+      }
+      .menu ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        margin: 0px;
+        gap: 20px;
+      }
+      .menu li {
+        line-height: 70px;
+      }
+      .menu ul a {
+        color: white;
+        text-decoration: none;
+      }
+      .menu ul a:hover {
+        color: blue;
+      }
+      .logo img {
+        height: 56px;
+        margin-top: calc((70px - 56px) / 2);
+      }
+      .button {
+        color: black;
+        text-decoration: none;
+        background: white;
+        border-radius: 15px;
+        height: 50px;
+        width: 120px;
+        line-height: 50px;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .button:hover {
+        background: blue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Câu 6: Header</h1>
+    <p><b>Yêu cầu: </b>Sử dụng HTML và CSS để dựng khối bên dưới.</p>
+    <header>
+      <div class="logo">
+        <img src="./logo-28tech.svg" alt="" class="logo" />
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="#" style="color: blue">Trang chủ </a></li>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Khóa học Zoom</a></li>
+          <li><a href="#">Khóa học Video</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="button">Liên hệ</a>
+    </header>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      .outside {
+        list-style-position: outside;
+      }
+      .inside {
+        list-style-position: inside;
+      }
+      .img-hidden {
+        width: 60px;
+        visibility: hidden;
+      }
+      .cha {
+        width: 100%;
+        height: 180px;
+        /* position: relative; */
+        position: sticky;
+        width: 100%;
+        height: 30px;
+        /* fixed khi top = 0 */
+        top: 0;
+      }
+      .con {
+        width: 60px;
+        height: 60px;
+      }
+      .motPhanTu {
+        float: left;
+        width: 25%;
+        height: 80px;
+        border: 1px solid black;
+      }
+      .mot {
+        overflow: hidden;
+      }
+      .hai {
+        overflow: visible;
+      }
+      .ba {
+        overflow: scroll;
+      }
+      .bon {
+        overflow: auto;
+      }
+      a {
+        color: black;
+      }
+      a:link {
+        color: red;
+      }
+      a:visited {
+        color: red;
+      }
+      a:hover {
+        color: aqua;
+      }
+      a:active {
+        color: rgb(4, 7, 48);
+      }
+      /* n begin 0  */
+      ul li:nth-child(even) {
+        color: red;
+      }
+      ul li::before {
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        background: blue;
+      }
+      p::selection {
+        color: white;
+        background: blue;
+      }
+      .bg-danger {
+        width: 50px;
+        height: 50px;
+        opacity: 0.5;
+        position: relative;
+        top: -100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>List Style Position Outside</h2>
+    <ul class="outside">
+      <li>
+        Phông chữ Monospace (Đơn cách) - ở đây tất cả các chữ cái có cùng chiều
+        rộng cố định.
+      </li>
+      <li>
+        Phông chữ Cursive (Chữ viết ẩu) bắt chước chữ viết tay của con người.
+      </li>
+      <li>Phông chữ Fantasy (tưởng tượng) là phông chữ trang trí/vui tươi.</li>
+    </ul>
+
+    <h2>List Style Position Inside</h2>
+    <ul class="inside">
+      <li>
+        Phông chữ Monospace (Đơn cách) - ở đây tất cả các chữ cái có cùng chiều
+        rộng cố định.
+      </li>
+      <li>
+        Phông chữ Cursive (Chữ viết ẩu) bắt chước chữ viết tay của con người.
+      </li>
+      <li>Phông chữ Fantasy (tưởng tượng) là phông chữ trang trí/vui tươi.</li>
+    </ul>
+    <!-- visiblity -->
+    <div>
+      <img src="../b4/macO.jpg" alt="" class="img-hidden" />
+    </div>
+    <!-- postition -->
+    <h2>position</h2>
+    <div class="cha bg-warning">
+      <div class="con bg-info">vu thai</div>
+    </div>
+    <!-- overflow -->
+    <div>
+      <div class="motPhanTu mot">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
+        quibusdam sunt dolore veritatis non nostrum minima sapiente amet labore
+        atque assumenda ratione dolorum officia harum iste eveniet eligendi a
+        culpa delectus cupiditate? Assumenda quaerat vel velit tenetur amet.
+      </div>
+      <div class="motPhanTu hai">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
+        quibusdam sunt dolore veritatis non nostrum minima sapiente amet labore
+      </div>
+      <div class="motPhanTu ba">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
+        quibusdam sunt dolore veritatis non nostrum minima sapiente amet labore
+      </div>
+      <div class="motPhanTu bon">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
+        quibusdam sunt dolore veritatis non nostrum minima sapiente amet labore
+        atque assumenda ratione dolorum officia harum iste eveniet eligendi
+      </div>
+    </div>
+    <!-- pseudo class seletor -->
+    <div>
+      <a href="#123">to chat gpt</a>
+    </div>
+    <ul>
+      <li>mot</li>
+      <li>hai</li>
+      <li>ba</li>
+      <li>bon</li>
+    </ul>
+    <p>
+      Hãy chọn một đoạn văn bản trong đoạn văn này để thấy hiệu ứng của
+      pseudo-element ::selection.
+    </p>
+    <!-- opacity -->
+    <div class="bg-danger">opacity</div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+/* global */
+:root {
+  --color-one: green;
+  --color-two: red;
+  --color-three: yellow;
+}
+h2 {
+  color: var(--color-three);
+}
+p {
+  --color-temp: violet;
+  color: var(--color-temp);
+}
