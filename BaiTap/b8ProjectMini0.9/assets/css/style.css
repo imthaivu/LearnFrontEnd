@@ -1,4 +1,5 @@
 /* header */
+<<<<<<< HEAD
 .header {
   position: fixed;
   top: 0;
@@ -6,6 +7,8 @@
   right: 0;
   z-index: 3;
 }
+=======
+>>>>>>> c9ff56b476561c96dd9c8b731645fcd3ed0a6256
 .top-header {
   background: var(--color-xanh);
   color: var(--color-vang);
@@ -18,8 +21,11 @@
 .header-main {
   /* khi khong co height thi tu dong theo content */
   box-shadow: 1px 1px 3px gray;
+<<<<<<< HEAD
   background: white;
 
+=======
+>>>>>>> c9ff56b476561c96dd9c8b731645fcd3ed0a6256
 }
 .header-main .inner-wrap ul {
   margin-top: 0;
@@ -102,7 +108,10 @@
   background: var(--color-background);
   padding-top: 20px;
   padding-bottom: 60px;
+<<<<<<< HEAD
   margin-top: 120px;
+=======
+>>>>>>> c9ff56b476561c96dd9c8b731645fcd3ed0a6256
 }
 .section-one .inner-wrap {
   display: flex;
@@ -283,7 +292,11 @@
   font-weight: bold;
   color: var(--color-vang);
   position: relative;
+<<<<<<< HEAD
   top: -30px;
+=======
+  top: -20px;
+>>>>>>> c9ff56b476561c96dd9c8b731645fcd3ed0a6256
 }
 .section-two .inner-wrap .inner-box .new-price {
   font-size: 3rem;
@@ -761,12 +774,15 @@
 .copyright .inner-logo .image {
   height: 25px;
 }
+<<<<<<< HEAD
 .copyright .inner-text {
   font-size: 1.1rem;
   color: var(--color-xanh);
 }
 /* toi muon tat scroll bar cua moi section  khi o man hinh nho*/
 /* section-one */
+=======
+>>>>>>> c9ff56b476561c96dd9c8b731645fcd3ed0a6256
 
 /*  */
 /* bai tap */
