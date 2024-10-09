@@ -1,4 +1,11 @@
 /* header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
 .top-header {
   background: var(--color-xanh);
   color: var(--color-vang);
@@ -11,6 +18,8 @@
 .header-main {
   /* khi khong co height thi tu dong theo content */
   box-shadow: 1px 1px 3px gray;
+  background: white;
+
 }
 .header-main .inner-wrap ul {
   margin-top: 0;
@@ -93,6 +102,7 @@
   background: var(--color-background);
   padding-top: 20px;
   padding-bottom: 60px;
+  margin-top: 120px;
 }
 .section-one .inner-wrap {
   display: flex;
@@ -273,7 +283,7 @@
   font-weight: bold;
   color: var(--color-vang);
   position: relative;
-  top: -20px;
+  top: -30px;
 }
 .section-two .inner-wrap .inner-box .new-price {
   font-size: 3rem;
@@ -751,6 +761,12 @@
 .copyright .inner-logo .image {
   height: 25px;
 }
+.copyright .inner-text {
+  font-size: 1.1rem;
+  color: var(--color-xanh);
+}
+/* toi muon tat scroll bar cua moi section  khi o man hinh nho*/
+/* section-one */
 
 /*  */
 /* bai tap */
