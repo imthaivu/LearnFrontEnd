@@ -27,6 +27,7 @@ var infoUser = {
 }
 
 
+
 console.log('name: ', infoUser.name)
 //for in
 console.log('for in----------------')
@@ -36,6 +37,8 @@ for (const key in infoUser) {
         console.log(key + ' ' + element);
     }
 }
+
+
 
 
 

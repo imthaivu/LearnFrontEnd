@@ -3,37 +3,39 @@ button.onclick = function () {
     alert("hello world")
 }
 
+
+
+
 var listUser = ["len van A", " Nguyen thi B", "Do van C"]
 // console.log
 console.log(listUser)
 // confirm
-// var result = confirm("vui long xac nhan human")
-// if(result === true){
-//     console.log("ban duoc vao trang web")
-// } else {
-//     console.error("ban khong duoc vao ")
-// }
+var result = confirm("vui long xac nhan human")
+if(result){
+    console.log('ban duoc vao')
+} else {
+    console.log('ban khong duoc vao')
+}
 // prompt
-// var nameOfCelebriti = prompt("nhap ten nguoi noi tieng ban muon xem", "chi pu")
-// console.log("day la cac bo phim cua " + nameOfCelebriti);
-
+var tenCuaBan = prompt('vui long nhap ten cua ban', 'thai')
+console.log('ten cua ban la: ' + tenCuaBan)
 // ham set time out
 // sau 5 giay no se goi cai ham do ra
 setTimeout(function(){
-    console.log("link cua ban sau 5 giay doi");
-}, 5000)
+    console.log('5 giay da troi qua')
+})
 
 // type of 
 var a = "apple";
 var b = 10;
-console.log(typeof b === "number");
+console.log('type of b',typeof b);
 // string function
 // indexof
 var myString = 'xin chao, toi la thai toi'
-console.log(myString.indexOf('toi',17));//tu pos = 117
-console.log(myString.indexOf('toi'))
-console.log(myString.indexOf('yeu'))
-
+console.log('toi tu index 17 ', myString.indexOf('toi',17));//tu pos = 117
+console.log('toi ',myString.indexOf('toi'))
+console.log('yeu ',myString.indexOf('yeu'))
+console.log('toi regex ', myString.search(/toi/)) // tuong tu indexof
 // lastindexof
 console.log(myString.lastIndexOf('toi'))
 

@@ -1,0 +1,20 @@
+.header .topbar {
+    padding: 10px 0;
+}
+.header .topbar .inner-contact {
+    gap: 20px;
+}
+.header .topbar .inner-contact .inner-mail i{
+    margin-right: 10px;
+}
+.header .topbar .inner-contact .inner-phone i{
+    margin-right: 10px;
+}
+.header .topbar .inner-social i {
+    margin-right: 20px;
+}
+.header .inner-menu .inner-logo span{
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
