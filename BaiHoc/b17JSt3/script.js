@@ -36,10 +36,11 @@ console.log("c = ", c);
 // declaration function: hoisting
 console.log('type of function')
 hamDeclare();
-function hamDeclare() {
+function hamDeclare(){
     console.log('ham declare')
 }
-const hamExpress = function () {
+
+const hamExpress = function(){
     console.log('ham express')
 }
 hamExpress();
@@ -51,7 +52,7 @@ hamArrow();
 
 
 
-//arrow function with args
+//arrow function with args độ thêm args
 const tinhTong3 = (...test) => {
     let tong = 0;
     for (const element of test) {
@@ -63,22 +64,20 @@ const tinhTong3 = (...test) => {
 
 
 
-console.log('arrow function with args: ', tinhTong3(1, 2, 3, 4, 5))
 
+console.log('arrow function with args: ', tinhTong3(1, 2, 3, 4, 5))
 // VD 1:  tinh tong cac so chan trong mang
-var mang = [1, 2, 3, 4, 5, 6];//khai bao
-function tinhTongChan(arr) {
+var nums = [1,2,3,2,6,2,8,9,10];
+function tinhTongChan(args){
     let tong = 0;
-    for (const element of arr) {
-        //if even
-        if (element % 2 == 0) {
-            tong += element;
+    for (const element of args) {
+        if(element % 2 ===0){
+            tong+=element;
         }
     }
     return tong;
 }
-res = tinhTongChan(mang)
-console.log('gia tri cua ham tinh tong arrow co args', res)
+console.log('tong cac so chan trong mang: ',tinhTongChan(nums));
 
 // tinh tong cac so
 // let n = parseInt(prompt('nhap n:'));
@@ -120,7 +119,7 @@ try {
     console.log(1 + [thai])
 
 } catch (error) {
-    console.log(error)
+    console.log('loi:', error)
 } finally {
     console.log("dong final nay luon chay")
 }
@@ -138,27 +137,31 @@ let user = {
 
 //cach 1
 user.phone = '01234'
+user.age = 20;
 //cach 2
-user['dia-chi'] = '123 cach mang thang 8'
-
+user['nguoi yeu'] = 'thai';
 console.log('user: ', user)
 
-// delete key value
-console.log('user after delete: ', user)
+// delete key
+delete user.age;
+delete user['nguoi yeu']
+console.log('user: ', user)
 
 
 // lam viec voi array
-var nums = [1, 2, 3, 4, 5, 5, 7, 8, 9, 10]
+console.log('work with array')
+var nums = [1, 2, 3, 4, 5, 5, 7, 8, 9, 11]
 let tong = 0;
 
-// foreach declare
-nums.forEach(function (item, index, array) {
+// foreach declare function, reset numb
+nums.forEach(function(item, index, array){
     tong += item;
-    array[index] = 0;// reset numb
+    array[index] = 0;//reset numb
 })
 console.log('tong of nums: ', tong);
-console.log('gia tri cua mang nums: ', nums);
+console.log('nums: ', nums);
 
+tong = 0;// reset tong
 nums.forEach(function(item, index, array){
     tong +=item;
     array[index] = 0;//reset numb
@@ -168,9 +171,10 @@ console.log('tong of nums: ', tong);
 // EVERY true / false
 
 // nums[3] = 1;
-const numsRes = nums.every(function (item) {
+const numsRes = nums.every(function(item){
     return item === 0;
 })
+const numsRes2 = nums.every(item => item === 0);
 // return true if toan bo true
 console.log(numsRes)
 if (numsRes) {
@@ -180,8 +184,8 @@ if (numsRes) {
 }
 
 // SOME chi can mot vai la duoc
-const oLaiLop = nums.some(function (item) {
-    return item > 0;
+const oLaiLop = nums.some(function(item){
+    return item < 5;
 })
 console.log('ket qua co bi o lai lop hay khong? ', oLaiLop);
 if (oLaiLop) {
@@ -190,13 +194,14 @@ if (oLaiLop) {
     console.log('len lop')
 }
 
+
 // find
-nums = [1, 2, 3, 4, 5, 5, 7, 8, 9, 10]
-numKhac0 = nums.find(function (item) {
+nums = [2, 2, 3, 4, 5, 5, 7, 8, 9, 10]
+numKhac0 = nums.find(function(item){
     return item !== 0;
 })
 
-console.log('num khac 0 = ', numKhac0)
+console.log('num khac 0 first = ', numKhac0)
 
 //filter
 var students = [
@@ -210,7 +215,7 @@ var students = [
     }, 
     {
         ten:'vu',
-        diem:7
+        diem:5
     }
 ]
 //item so 5
@@ -218,45 +223,54 @@ console.log('xem cac student = 5')
 const xemSo5 = students.filter(function (item) {
     return item.diem === 5;
 })
+const xemSe3 = students.filter(function(item){
+    return item.diem ===3;
+})
 console.log(xemSo5)
+console.log(xemSe3)
 
 //item = array
 nums = [1,2,3,4,5,6,7,8,9,10]
 
 
 //item copy
-console.log('item copy')
-let itemCopy = nums.map(item => {
+console.log('nums copy')
+let numsCopy = nums.map(function(item){
     return item;
 })
-console.log(itemCopy)
+console.log(numsCopy)
 
 //tao mang moi
 console.log('array ten hocLuc')
-let arrTenHocLuc = students.map(item => {
+let arrTenHocLuc = students.map(function(item){
     let ten = item.ten;
     let hocLuc;
-    if(item.diem >= 5){
-        hocLuc = 'len lop'
+    if(item.diem < 5){
+        hocLuc = 'tb'
     } else {
-        hocLuc = 'o lai lop'
+        hocLuc = 'kha gioi'
     }
     return {
-        ten,hocLuc
+        ten, hocLuc
     }
 })
 console.log(arrTenHocLuc)
 
 //reduce
-// vd 1: tinh tong
+// vd 1: tinh tong khong cung cap gia tri khoi tao
 tong = nums.reduce((total, item) => {
     console.log(total);
     return total +item;
 })
-console.log('tong1',tong);
+console.log('tong with none initial',tong);
+
 //so 0 la gia tri khoi tao
 tong = nums.reduce((total,item) => total+item,0)
-console.log('tong2',tong);
+console.log('tong with initial',tong);
+tong = nums.reduce((total,item) => {
+    return total +item;
+}, 0)
+console.log('tong with initial', tong)
 
 // vd 2: tinh tich cac phan tu
 let tich = nums.reduce((total,item)=>{
