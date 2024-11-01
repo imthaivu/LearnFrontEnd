@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+</head>
+<body>
+    
+    <!-- DOM navigation -->
+    <div class="parent">
+        <div class="child-1" id="child-1">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="orther-box"></div>
+        </div>
+        <div class="child-2"></div>
+        <div class="child-3"></div>
+    </div>
+    <script>
+        const child1 = document.querySelector('#child-1');
+        console.log(child1);
+        console.log(child1.childNodes);//children
+        console.log(child1.parentNode);//parent
+        console.log(child1.parentNode.parentNode);//body
+        console.log(child1.parentNode.parentNode.parentNode);//html
+        console.log(child1.querySelectorAll('.orther-box'));//first box
+        console.log(child1.nodeName);
+        console.log(child1.nextElementSibling)
+        console.log(child1.previousElementSibling)
+        console.log(child1.firstElementChild)
+        console.log(child1.lastElementChild) 
+    </script>
+
+</body>
+</html>

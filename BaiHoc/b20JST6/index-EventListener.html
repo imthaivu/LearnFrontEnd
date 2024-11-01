@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click me</button>
+
+    <script>
+        function hamMot(){
+            console.log('ham mot')
+        }
+        function hamHai(){
+            console.log('ham hai')
+        }
+        const btn = document.querySelector('button');
+        // btn.onclick = function(){
+        //     hamMot();
+        // }
+        // btn.onclick = function(){
+        //     hamHai();
+        // }
+        btn.addEventListener('click', hamMot);// chi can ten ham khong can ()
+        // btn.addEventListener('click', function(){
+        //     hamMot();
+        // })
+        btn.addEventListener('click', hamHai);
+        // btn.addEventListener('click', function(){
+        //     hamHai();
+        // })
+        setTimeout(function(){
+            console.log('remove event listener hamMot');
+            btn.removeEventListener('click', hamMot);
+        }, 3000)
+    </script>
+
+</body>
+</html>

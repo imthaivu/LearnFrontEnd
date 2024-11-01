@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom node</title>
+  </head>
+  <body>
+    <!-- <script>
+        var theH1 = document.createElement('h1');
+        theH1.innerHTML = 'Hello World';// tao ra
+        document.body.appendChild(theH1);//them vao
+        // tao text node
+        var textNode = document.createTextNode('Hello World');
+        theH1.appendChild(textNode);
+        var textNode2 = textNode.cloneNode(true);
+        document.body.appendChild(textNode2);
+    </script> -->
+
+    <!-- them moi -->
+    <!-- <ul class="menu">
+        <li>item</li>
+        <li>item</li>
+     </ul>
+     <button class="addBtn">add 1 item</button>
+        <button class="rmvBtn">remove 1 item</button>
+     
+     <script>
+        var btn = document.querySelector('.addBtn');
+        var menu = document.querySelector('.menu');
+        const firstLi = menu.firstElementChild;
+        btn.addEventListener('click', function(){
+            var li = document.createElement('li');
+            li.innerHTML = 'item new';
+            menu.insertBefore(li, firstLi);
+        })
+
+        // get all li
+        
+        var rmvBtn = document.querySelector('.rmvBtn');
+        rmvBtn.addEventListener('click', function(){
+            var allLi = menu.querySelectorAll('li');
+            menu.removeChild(allLi[0]);
+        })
+     </script> -->
+
+    <!-- replace -->
+    <ul class="menu">
+      <li>item</li>
+      <li>item</li>
+    </ul>
+    <script>
+      var menu = document.querySelector(".menu");
+      var li = document.createElement("li");
+      li.innerHTML = "item new";
+      
+     const items = menu.querySelectorAll('li')
+     items.forEach(element => {
+        element.addEventListener('click', function(){
+            var liClone = li.cloneNode(true);
+            menu.replaceChild(liClone, element);
+
+        })
+     });
+    </script>
+  </body>
+</html>
