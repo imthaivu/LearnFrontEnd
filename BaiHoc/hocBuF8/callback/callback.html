@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call back</title>
+</head>
+<body>
+    
+    <script>
+        function myFunction(myCallback) {
+            myCallback();
+        }
+        function myDisplayer() {
+            document.write("Hello World!");
+        }
+        myFunction(myDisplayer);
+    </script>
+</body>
+</html>

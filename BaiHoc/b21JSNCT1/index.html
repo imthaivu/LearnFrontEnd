@@ -1,55 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- // hoisting cho bien -->
 
     <script>
-        
-        // console.log(a);
-        // let a = 1;
-        //   |
-        //   |
-        //   v
-        // duoc hieu la
-        
-        // console.log(a);
-        // let a;
-        // a = 1;
+      // console.log(a);
+      // let a = 1;
+      //   |
+      //   |
+      //   v
+      // duoc hieu la
 
-        // console.log(b);
-        // var b = 2;
-        //    |
-        //    |  
-        //    v
-        // duoc hieu la
-        // var b;
-        // console.log(b);
-        // b = 2;
+      // console.log(a);
+      // let a;
+      // a = 1;
 
-        // c = 10;
-        // console.log(c);
-        // var  c;
+      // console.log(b);
+      // var b = 2;
+      //    |
+      //    |
+      //    v
+      // duoc hieu la
+      // var b;
+      // console.log(b);
+      // b = 2;
 
+      // c = 10;
+      // console.log(c);
+      // var  c;
     </script>
     <!-- // hoisting cho function -->
     <script>
-        console.log(sum(1,2));
-        function sum(a,b){
-            return a+b;
-        }
-        //    |
-        //    |
-        //    v
-        // var sum;
-        // console.log(sum(1,2));
-        // sum = function(a,b){
-        //     return a+b;
-        // }
+      // console.log(sum(1,2));
+      // function sum(a,b){
+      //     return a+b;
+      // }
+      //    |
+      //    |
+      //    v
+      // var sum;
+      // console.log(sum(1,2));
+      // sum = function(a,b){
+      //     return a+b;
+      // }
     </script>
-</body>
+
+    <!-- // this -->
+    <script>
+      //   console.log(this); //window
+      //   console.log(this === window);
+      //   function checkThis() {
+      //     console.log(this);
+      //   }
+      //   console.log('goi ham checkThis()');
+      //   checkThis();
+      //   var obj = {
+      //     // "use strict";
+
+      //     checkThis: function () {
+      //       console.log(this);
+      //     },
+      //     thai:10
+      //   };
+      //   obj.checkThis();
+    </script>
+
+    <!-- // this trong event -->
+    <button id="button">click me</button>
+    <ul id="menu">
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+
+    <script>
+      //   const button = document.querySelector("#button");
+      //   button.addEventListener("click", function () {
+      //     console.log(this);
+      //   });
+
+      //   const items = document.querySelectorAll("#menu li");
+      //   console.log(items);
+      //   [...items].forEach((item) => {
+      //     item.addEventListener("click", function () {
+      //       console.log(this);//item
+      //       console.log(this);//item
+      //       console.log(this);//item
+      //     });
+      //   });
+    </script>
+
+    <script>
+      let info = {
+        fullName: "Nguyen Van A",
+        age: 20,
+        email: " thai@mail",
+        getFullName: function () {
+          console.log(this.fullName);
+        },
+        getAge: () => {
+          console.log(this.age);// this = window
+        },
+        cccd: {
+          number: 123456789,
+          address: "HN",
+          getCCCD: function () {
+            console.log(this.number); //this = cccd
+          },
+        },
+      };
+      info.getFullName();
+      console.log(info.fullName);
+      console.log(info.cccd.number);
+      info.cccd.getCCCD();
+        info.getAge();
+    </script>
+  </body>
 </html>

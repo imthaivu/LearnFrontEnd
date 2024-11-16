@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bai 23</title>
+  </head>
+  <body>
+    <input type="text" name="email" placeholder="nhap ten" />
+    <button id="send">submit</button>
+    <button id="clear">xoa</button>
+    <button id="buttonUp">Tang</button>
+    <button id="buttonClearAll">xoa tat ca</button>
+    <div id="result"></div>
+    <!-- //local session cookies -->
+    <script src="./js.js"></script>
+    <!-- closure -->
+    <script>
+      const c = 10;
+      const tinhToan = () => {
+        const c = 5; //priority
+        const tong = (a, b) => {
+          const c = 0;
+          return a + b + c;
+        };
+        return tong;
+      };
+      const tong = tinhToan()(2, 3);
+      const tt = tinhToan();
+      //   console.log(tt);
+      //   console.log(tt(2, 3));
+      //   console.log(tong);
+
+      const tinhToan2 = () => {
+        const tong = (a, b) => {
+          return a + b;
+        };
+        const hieu = (a, b) => {
+          return a - b;
+        };
+        // tich
+        const tich = (a, b) => {
+          return a * b;
+        };
+        // thuong
+        const thuong = (a, b) => {
+          return a / b;
+        };
+        return {
+          tong: tong,
+          hieu: hieu,
+          tich: tich,
+          thuong: thuong,
+        };
+      };
+      const tt2 = tinhToan2();
+      console.log(tt2.tong(2, 3));
+      console.log(tt2.hieu(2, 3));
+      console.log(tt2.tich(2, 3));
+      console.log(tt2.thuong(2, 3));
+
+      ///
+      const info = () => {
+        let fullName = "Dang Phuong Nam";
+        const getFullName = () => {
+          return fullName;
+        };
+        const setFullName = (name) => {
+          fullName = name;
+        };
+
+        return {
+          getFullName: getFullName,
+          setFullName: setFullName,
+        };
+      };
+      const info1 = info(); //object
+      console.log(info1.getFullName());
+    </script>
+
+    <script>
+      const a = 10;
+      const b = 20;
+      const tongAB = a + b;
+      const string  = `tong cua ${a} va ${b} la ${tongAB}`;
+      console.log(string);
+    </script>
+  </body>
+</html>

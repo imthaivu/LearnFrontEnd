@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise</title>
+  </head>
+  <body>
+    <script>
+      // cac ham async settimeout, fetch, file read, file write, request, response, ...
+      // mac du la single thread nhung van co the thuc hien nhieu tac vu cung luc
+      //   setTimeout(() => {
+      //     console.log("End");
+      //   }, 2000);
+      //   setTimeout(() => {
+      //     console.log("start");
+      //   }, 1000);
+
+      // promise param la excutor function
+      var promise = new Promise(function (resolve, reject) {
+        //
+        // resolve('Thanh cong');
+        // reject('That bai');
+
+        //fake call api
+        resolve([
+          {
+            name: "thai vu",
+            age: 18,
+          },
+          {
+            name: "thai vu 2",
+            age: 19,
+          },
+        ]);
+        reject("That bai");
+      });
+      promise
+        .then(function () {
+          //neu khong return promise thi no se async
+          return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+              resolve("Thanh cong");// toi cuc ki khong hieu cho nay hay giai thich cho tôi
+            }, 2000);
+          });
+        })
+        .then(function (data) {
+          //khi ham truoc khong duoc return thi no se nhan gia tri undefined
+          console.log(data);//thanh cong
+          return data;
+        })
+        .then(function (data) {
+          console.log("3");
+          console.log(data);
+          return data;
+        })
+
+        .catch(function (err) {
+          console.log(err);
+        })
+        .finally(function () {
+          console.log("done");
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>json</title>
+  </head>
+  <body>
+    <script>
+      let inforUser = {
+        fullName: "vu quoc thai",
+        email: "thai@gmail",
+        age: 21,
+      };
+      // key phai trong ""
+      // duoi cung khong co dau ,
+      let inforUserJSon = `{
+            "fullName":"vu quoc thai",
+            "email":"thai@gmail",
+            "age":21
+        }`;
+      console.log(inforUser);
+      console.log(inforUserJSon);
+
+      let inforUserJSontoJS = JSON.parse(inforUserJSon);
+      console.log(inforUserJSontoJS);
+      let inforUserJStoJSon = JSON.stringify(inforUserJSontoJS);
+      console.log(inforUserJStoJSon);
+    </script>
+
+    <script>
+      let jsonNumber = `5`;
+      console.log(jsonNumber); //string
+      console.log(JSON.parse(jsonNumber)); //number
+    </script>
+
+    <script>
+      let jsonString = `"5"`;
+      console.log(jsonString); //"string"
+      console.log(JSON.parse(jsonString)); //string
+    </script>
+
+    <script>
+      let jsonBoolean = `true`;
+      console.log(jsonBoolean); //string
+      console.log(JSON.parse(jsonBoolean)); //boolean
+    </script>
+
+    <script>
+      let jsonNull = `null`;
+      console.log(jsonNull); //string
+      console.log(JSON.parse(jsonNull)); //null
+    </script>
+<!-- table listUsesr -->
+    <table id="listUser">
+      <tr>
+        <th>FullName</th>
+        <th>Email</th>
+        <th>Age</th>
+      </tr>
+    </table>
+    <p>div add html</p>
+
+<!-- div add inner html -->
+<div id="addHtml"></div>
+    <script>
+          let jsonArray = `[
+          {
+              "fullName":"vu thai",
+              "email":"thai@gmail",
+              "age":21
+          },
+          {
+              "fullName":"vu quoc",
+              "email":"quoc@gmail",
+              "age":22
+          }
+          ]`;
+          console.log(jsonArray);//string
+          let array = JSON.parse(jsonArray);
+          array.forEach(element => {
+              console.log(element);
+              // tao hang, cell
+              let tr = document.createElement("tr");
+              let td1 = document.createElement("td");
+              let td2 = document.createElement("td");
+              let td3 = document.createElement("td");
+              // gan noi dung vao
+              td1.innerHTML = element.fullName;
+              td2.innerHTML = element.email;
+              td3.innerHTML = element.age;
+              // gan cell vao hang
+              tr.appendChild(td1);
+              tr.appendChild(td2);
+              tr.appendChild(td3);
+              // gan hang vao bang
+              document.getElementById("listUser").appendChild(tr);
+
+          });
+          let html = "";
+          array.forEach(ele => {
+              html += `<div>
+            <div>${ele.fullName}</div>
+            <div>${ele.email}</div>
+            <div>${ele.age}</div>
+        </div>`;
+          })
+          console.log(html);
+let addHtml = document.getElementById("addHtml");
+addHtml.innerHTML = html;
+    </script>
+  </body>
+</html>

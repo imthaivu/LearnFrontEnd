@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callback 2</title>
+  </head>
+  <body>
+    <script>
+          var course = ['html', 'css', 'js'];
+
+          // ------------- vi du 1
+      //    var htmls = course.map(function(course){
+      //         return `<h2>${course}</h2>`;
+      //     })
+      //     console.log(htmls.join(''));
+          // -------------vi du 2
+          // Array.prototype.map2 = function(callback){
+          //     var output = [], arrayLength = this.length;
+          //     for(var i = 0; i < arrayLength; i++){
+          //         var result = callback(this[i]);
+          //         output.push(result);
+          //     }
+          //     return output;
+          // }
+          Array.prototype.map2 = function(callback){
+              var output = [];//la mang
+              arrlength = this.length;//? la gi
+              for (let i = 0; i < arrlength; i++) {
+                  const element = callback(this[i]);
+                  output.push(element);
+
+              }
+              return output;
+          }
+          // khai bao ham
+          function ham1(course){
+              return `<h2>${course}</h2>`;
+          }
+          // hang data
+          var htmls2 = course.map2(ham1)
+          console.log(htmls2)
+
+     
+    </script>
+  </body>
+</html>
