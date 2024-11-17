@@ -1,0 +1,240 @@
+$color-red: rgb(252, 118, 118);
+$color-green: green;
+$color-white: white;
+$color-gray: gray;
+$color-black: black;
+
+@mixin display-flex() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex-wrap() {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin position-absolute($position, $x, $y) {
+  position: absolute;
+  @if($position == 'top-left'){
+    top: $x;
+    left: $y;
+  }
+  @else if($position == 'top-right'){
+    top: $x;
+    right: $y;
+  }
+  @else if($position == 'bottom-left'){
+    bottom: $x;
+    left: $y;
+  }
+  @else if($position == 'bottom-right'){
+    bottom: $x;
+    right: $y;
+  }
+  @else {}
+
+
+}
+.button {
+  background: gray;
+  color: black;
+  border: 0;
+  @include border-radius(15px);
+  padding: 10px 30px;
+}
+// % là placeholder
+// neu minh thay phan code nay khong can bien dich ra
+// toi uu code
+%button--2 {
+  background: blue;
+  color: white;
+}
+
+.button--red {
+  @extend .button; // kế thừa lại các thuộc tính của .button
+  @extend %button--2; // kế thừa lại các thuộc tính của %button--2
+  background: $color-red;
+  color: white;
+}
+.button--green {
+  @extend .button; // kế thừa lại các thuộc tính của .button
+  @extend %button--2; // kế thừa lại các thuộc tính của %button--2
+  background: $color-green;
+  color: white;
+}
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  @include display-flex();
+
+  &__item {
+    margin: 0 10px;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &--active {
+      color: $color-green;
+    }
+    &--disabled {
+      color: $color-gray;
+      cursor: no-drop;
+    }
+    &:hover {
+      color: $color-red;
+    }
+  }
+}
+
+// pagination
+
+.pagination {
+  @include display-flex();
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  &__item {
+    margin: 0 5px;
+    &--active {
+      color: $color-red;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: $color-black;
+  }
+  //   cha con
+  &__item--active &__link {
+    color: $color-red;
+  }
+  &__item--disabled &__link {
+    color: $color-gray;
+    cursor: no-drop;
+  }
+}
+
+// parent
+.box {
+  position: relative;
+  background: yellow ;
+  height: 500px;
+  width: 100%;
+  @include border-radius(20px);
+
+  &__item {
+    background: orange;
+    width: 100px;
+    height: 50px;
+
+    &--one {
+      @include position-absolute('top-left', 10px, 10px);
+    }
+    &--two {
+      @include position-absolute('top-right', 10px, 10px);
+    }
+
+    &--three {
+      @include position-absolute('bottom-left', 10px, 10px);
+    }
+
+    &--four {
+      @include position-absolute('bottom-right', 10px, 10px);
+      background: red;
+    }
+  }
+}
+
+// vong lap for
+
+$lengthOpacity: 10;
+// .opacity {
+//   @for $i from 1 through $lengthOpacity {
+//     &-#{$i} {
+//       opacity: $i * 0.1;
+//     }
+//   }
+// }
+
+@for $i from 1 through $lengthOpacity {
+  .opacity-#{$i} {
+    opacity: $i * 0.1;
+  }
+}
+
+// while margin
+
+$lengthMargin: 10;
+$margin: 10px;// phai co don vi
+
+@while($lengthMargin > 0) {
+  .margin-#{$lengthMargin} {
+    margin: $margin * $lengthMargin;
+  }
+  $lengthMargin: $lengthMargin - 1;
+}
+
+$lengthPadding: 10;
+$padding: 10;
+@while($lengthPadding > 0) {
+  .padding-#{$lengthPadding} {
+    padding: $padding * $lengthPadding + px;// add px unit
+  }
+  $lengthPadding: $lengthPadding - 1;
+}
+
+
+// operator
+.box-2 {
+  background: orange;
+  width: calc(50px / 50);//sepator with calc
+}
+
+
+// @each
+.btn {
+  background: white;
+  color: black;
+}
+
+// $colors: #b8b8fe, #ff4242, #ffbf48;
+.btn {
+  color:#f1f2ef;
+}
+$colors: ('red','#ff9b9b', '#fff'), ('green','#d4ff9b', '#fff'), ('white','#f1f2ef', '#000');
+// @each $item in $colors {
+//   .btn--#{"#{$item}"} {
+//     background: $item;
+//   }
+// }
+@each $labelClass, $bg, $colorText in $colors {
+  .btn--#{"#{$labelClass}"} {
+    background: $bg;
+    color: $colorText;
+  }
+}
+
+
+// @function
+@function calculate($a, $b) {
+  $tong : $a + $b;
+  @return $tong;
+}
+
+.box-3 {
+  width: calculate(10px, 20px);
+  height: calculate(10px, 20px);
+  background: red;
+}
+
+

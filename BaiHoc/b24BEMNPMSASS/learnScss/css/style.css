@@ -1,3 +1,274 @@
+.button, .button--green, .button--red {
+  background: gray;
+  color: black;
+  border: 0;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+  padding: 10px 30px;
+}
 
+.button--green, .button--red {
+  background: blue;
+  color: white;
+}
+
+.button--red {
+  background: rgb(252, 118, 118);
+  color: white;
+}
+
+.button--green {
+  background: green;
+  color: white;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.nav__item {
+  margin: 0 10px;
+}
+.nav__link {
+  text-decoration: none;
+}
+.nav__link--active {
+  color: green;
+}
+.nav__link--disabled {
+  color: gray;
+  cursor: no-drop;
+}
+.nav__link:hover {
+  color: rgb(252, 118, 118);
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pagination__item {
+  margin: 0 5px;
+}
+.pagination__item--active {
+  color: rgb(252, 118, 118);
+}
+.pagination__link {
+  text-decoration: none;
+  color: black;
+}
+.pagination__item--active .pagination__link {
+  color: rgb(252, 118, 118);
+}
+.pagination__item--disabled .pagination__link {
+  color: gray;
+  cursor: no-drop;
+}
+
+.box {
+  position: relative;
+  background: yellow;
+  height: 500px;
+  width: 100%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+}
+.box__item {
+  background: orange;
+  width: 100px;
+  height: 50px;
+}
+.box__item--one {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.box__item--two {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.box__item--three {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.box__item--four {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: red;
+}
+
+.opacity-1 {
+  opacity: 0.1;
+}
+
+.opacity-2 {
+  opacity: 0.2;
+}
+
+.opacity-3 {
+  opacity: 0.3;
+}
+
+.opacity-4 {
+  opacity: 0.4;
+}
+
+.opacity-5 {
+  opacity: 0.5;
+}
+
+.opacity-6 {
+  opacity: 0.6;
+}
+
+.opacity-7 {
+  opacity: 0.7;
+}
+
+.opacity-8 {
+  opacity: 0.8;
+}
+
+.opacity-9 {
+  opacity: 0.9;
+}
+
+.opacity-10 {
+  opacity: 1;
+}
+
+.margin-10 {
+  margin: 100px;
+}
+
+.margin-9 {
+  margin: 90px;
+}
+
+.margin-8 {
+  margin: 80px;
+}
+
+.margin-7 {
+  margin: 70px;
+}
+
+.margin-6 {
+  margin: 60px;
+}
+
+.margin-5 {
+  margin: 50px;
+}
+
+.margin-4 {
+  margin: 40px;
+}
+
+.margin-3 {
+  margin: 30px;
+}
+
+.margin-2 {
+  margin: 20px;
+}
+
+.margin-1 {
+  margin: 10px;
+}
+
+.padding-10 {
+  padding: 100px;
+}
+
+.padding-9 {
+  padding: 90px;
+}
+
+.padding-8 {
+  padding: 80px;
+}
+
+.padding-7 {
+  padding: 70px;
+}
+
+.padding-6 {
+  padding: 60px;
+}
+
+.padding-5 {
+  padding: 50px;
+}
+
+.padding-4 {
+  padding: 40px;
+}
+
+.padding-3 {
+  padding: 30px;
+}
+
+.padding-2 {
+  padding: 20px;
+}
+
+.padding-1 {
+  padding: 10px;
+}
+
+.box-2 {
+  background: orange;
+  width: 1px;
+}
+
+.btn {
+  background: white;
+  color: black;
+}
+
+.btn {
+  color: #f1f2ef;
+}
+
+.btn--red {
+  background: "#ff9b9b";
+  color: "#fff";
+}
+
+.btn--green {
+  background: "#d4ff9b";
+  color: "#fff";
+}
+
+.btn--white {
+  background: "#f1f2ef";
+  color: "#000";
+}
+
+.box-3 {
+  width: 30px;
+  height: 30px;
+  background: red;
+}
 
 /*# sourceMappingURL=style.css.map */
