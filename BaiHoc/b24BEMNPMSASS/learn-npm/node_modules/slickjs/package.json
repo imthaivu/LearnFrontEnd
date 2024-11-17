@@ -1,0 +1,23 @@
+{
+  "name": "slickjs",
+  "version": "1.0.0",
+  "description": "Text transformation based on data table",
+  "main": "slickjs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgek01/slick.git"
+  },
+  "keywords": [
+    "transformation",
+    "javascript"
+  ],
+  "author": "georgek01",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/georgek01/slick/issues"
+  },
+  "homepage": "https://github.com/georgek01/slick#readme"
+}

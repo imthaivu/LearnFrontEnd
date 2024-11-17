@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Transpose</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="slick.js"></script>
+    <script>
+
+
+        var parse = document.getElementById("parse");
+
+        parse.addEventListener("click", parse, null);
+
+        function parse(){
+
+            
+
+        };
+
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .editor {
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+            height: 300px;
+            min-height: 300px;
+            max-height: 300px;
+        }
+
+        .tools {
+            width: 100%;
+            text-align: right;
+            padding: 0.5em;
+        }
+
+        .tools button {
+            border: 1px solid #6699cc;
+            background-color: #efefef;
+            padding: 0.3em;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="tools">
+        <button id="parse">Parse</button>
+    </div>
+
+    <textarea class="editor" id="template">
+[$constant]
+database       = local
+schema         = dbo
+table          = employee
+</textarea>
+
+    <textarea class="editor" id="processed">
+
+
+</textarea>
+
+</body>
