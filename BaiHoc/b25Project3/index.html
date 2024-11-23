@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h2>Danh muc san pham</h2>
+    <div id="category" class="category__list"></div>
+
+    <h2>Danh sach cac san pham</h2>
+    <div class="search" id="search">
+      <input type="text" />
+      <button>Search</button>
+    </div>
+
+    <div id="filter">
+      <label for="">Sap xep theo</label>
+      <select name="" id="">
+        <option value="mac-dinh">mac dinh</option>
+        <option value="gia-thap-cao">gia thap den cao</option>
+        <option value="gia-cao-thap">gia cao den thap</option>
+        <option value="giam-gia-nhieu">giam gia nhieu</option>
+      </select>
+    </div>
+
+    <div id="product" class="product__list"></div>
+
+    <div id="pagination">
+      <span class="pagination__button" id="paginationPrev">Prev</span>
+      <span class="pagination__number" id="paginationNumber">1</span>
+      <span class="pagination__button" id="paginationNext">Next</span>
+    </div>
+
+    <script type="module" src="./categories.js"></script>
+    <!-- chi can cac file import moi module -->
+    <script type="module" src="./products.js"></script>
+  </body>
+</html>

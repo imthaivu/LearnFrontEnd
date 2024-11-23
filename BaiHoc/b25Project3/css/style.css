@@ -1,0 +1,72 @@
+
+
+.category__list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.category__item {
+    width: 32%;
+    padding: 10px;
+    border: 1px solid #ffaf0f;
+    border-radius: 5px;
+    text-align: center; 
+    cursor: pointer;
+
+}
+
+.product__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/* <div class="product__item">
+                <img src="${item.images}" alt="" class="product__img">
+                <div class="product__name">${item.title}</div>
+                <div class="product__price">${item.price}</div>
+            </div> */
+.product__item {
+    width: 17%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ffaf0f;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.product__img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.product__discount {
+    color: red;
+    font-weight: bold;
+}
+.product__stock {
+    color: green;
+    font-weight: bold;
+}
+
+/* pagination */
+#pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.pagination__button {
+    background: orange;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
