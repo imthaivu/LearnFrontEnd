@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tổng ôn JS</title>
+  </head>
+  <body>
+    <script>
+      // ------------------------phan biet let var
+      // 1. scope
+      function test() {
+        if (true) {
+          var a = 5;
+          let b = 10; //scope trong if
+        }
+        console.log(a); // 5
+        // console.log(b); // b is not defined
+      }
+
+      test();
+
+      // 2. redeclaration
+      var c = 10;
+      var c = 15;
+      console.log(c);
+      let d = 20;
+      //    let d = 30;// Uncaught SyntaxError: Identifier 'd' has already been declared
+
+      // 3. hoisting
+      console.log(e); // undefined
+      var e = 5;
+      // window property
+      var ten = "thai";
+      console.log("window");
+      console.log(window.ten);
+      // console.log(f); // Uncaught ReferenceError: Cannot access 'f' before initialization
+      let f = 5;
+
+      // tinh nang trong vong lap
+      for (var i = 0; i < 5; i++) {
+        setTimeout(() => {
+          console.log(i); // 5 5 5 5 5--do su dung 1 bien i
+        }, 1000);
+      }
+
+      for (let j = 0; j < 5; j++) {
+        setTimeout(() => {
+          console.log(j); // 0 1 2 3 4
+        }, 1000);
+      }
+
+      // default parameter
+      const sum = (a, b) => {
+        return a + b;
+      };
+      console.log(sum(5, 10)); // 15
+      console.log(sum(5)); // NaN
+      const sum2 = (a = 0, b = 0) => {
+        return a + b;
+      };
+      console.log(sum2()); // 0
+
+      const sum3 = (a, b) => {
+        a = a || 0;
+        b = b || 0;
+        return a + b;
+      };
+      console.log(sum3()); // 0
+
+      // ---------------------------spread syntax ... use for array and object
+      console.log("spread syntax");
+      const arr = [1, 2, 3];
+      console.log(arr); // [1,2,3]
+      console.log(...arr); // 1 2 3
+
+      const arr2 = [...arr, 4, 5, 6];
+      console.log(...arr2); // [1,2,3,4,5,6]
+
+      const obj = {
+        a: 1,
+        b: 2,
+        c: 3,
+      };
+      console.log(obj); // {a: 1, b: 2, c: 3}
+      const obj2 = {
+        d: 4,
+        e: 5,
+      };
+      console.log(obj2); // {d: 4, e: 5}
+      const obj3 = {
+        ...obj,
+        ...obj2,
+      };
+      console.log(obj3); // {a: 1, b: 2, c: 3, d: 4, e: 5}
+
+      // ---------------------------rest parameter
+      const sum4 = (...args) => {
+        return args.reduce((a, b) => a + b, 0);
+      };
+      console.log(sum4(1, 2, 3, 4, 5)); // 15
+
+      const sum5 = (a, b, ...args) => {
+        console.log(args); // [3,4,5]
+        return a + b;
+      };
+      sum5(1, 2, 3, 4, 5);
+
+      // ---------------------------destructuring
+      let info =
+        {
+          name: "John",
+          age: 20,
+          address: "HN",
+        } || {};
+
+      let { name, age, address } = info;
+      console.log(name); // John
+      console.log(age); // 20
+      console.log(address); // HN
+
+      function tong(a, b) {
+        return a + b;
+      }
+      const tong2 = (a, b) => a + b;
+      tong3 = (a, b) => a + b;
+      console.log(tong(5, 10)); // 15
+      console.log(tong2(5, 10)); // 15
+      console.log(tong3(5, 10)); // 15
+    </script>
+  </body>
+</html>
