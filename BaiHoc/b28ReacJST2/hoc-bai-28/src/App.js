@@ -1,17 +1,26 @@
 // import logo from './logo.svg';
 import './App.css';
+import Content from './components/Content';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import MainContent from './components/MainContent';
+import NavigationMenu from './components/NavigationMenu';
 
 function App() {
-  let name = "vu quoc thai";
-  const css = {
-    color:"red",
-    backgroundColor:"blue"
-  }
+
 
   return (
-    <div className="test" style={css}>
-      Hello {name}
-    </div>
+    <>
+      <Header />
+      <NavigationMenu />
+      <div className="main">
+        <Content text="Content 1" number={10} active = {true}/>
+        <MainContent />
+        <Content  text="Content 2"  number={5} active = {false}/>
+      </div>
+
+      <Footer />
+    </>
   );
 }
 
