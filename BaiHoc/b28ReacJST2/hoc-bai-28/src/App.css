@@ -58,3 +58,7 @@
 .box--active {
   color: red;
 }
+
+.inputActive {
+  background-color: red;
+}
