@@ -3,3 +3,4 @@ export const fetchApi = async (url)=>{
     const result = await response.json();//chuyển response thành json
     return result;
 }
+

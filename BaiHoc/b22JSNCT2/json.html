@@ -3,111 +3,124 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>json</title>
+    <title>JSON Examples</title>
   </head>
   <body>
+    <!-- Table to display user data -->
+    <table id="listUser">
+      <!-- Bảng này sẽ được cập nhật với thông tin người dùng từ JSON -->
+    </table>
+
+    <!-- div để thêm nội dung HTML -->
+    <div id="addHtml"></div>
+    <!-- Script 1: Object to JSON and back -->
     <script>
       let inforUser = {
         fullName: "vu quoc thai",
-        email: "thai@gmail",
+        email: "thai@gmail.com",
         age: 21,
       };
-      // key phai trong ""
-      // duoi cung khong co dau ,
-      let inforUserJSon = `{
-            "fullName":"vu quoc thai",
-            "email":"thai@gmail",
-            "age":21
-        }`;
-      console.log(inforUser);
-      console.log(inforUserJSon);
+      // Đối tượng inforUser đã được tạo
 
+      let inforUserJSon = `{
+        "fullName": "vu quoc thai",
+        "email": "thai@gmail.com",
+        "age": 21
+      }`;
+
+      // Đây là một chuỗi JSON
+
+      console.log(inforUser); // In ra đối tượng
+      console.log(inforUserJSon); // In ra chuỗi JSON
+
+      // Chuyển chuỗi JSON thành đối tượng JavaScript
       let inforUserJSontoJS = JSON.parse(inforUserJSon);
       console.log(inforUserJSontoJS);
+
+      // Chuyển đối tượng JavaScript thành chuỗi JSON
       let inforUserJStoJSon = JSON.stringify(inforUserJSontoJS);
       console.log(inforUserJStoJSon);
     </script>
 
+    <!-- Script 2: JSON number to JavaScript number -->
     <script>
-      let jsonNumber = `5`;
-      console.log(jsonNumber); //string
-      console.log(JSON.parse(jsonNumber)); //number
+      let jsonNumber = `5`; // Đây là một chuỗi
+      console.log(jsonNumber); // In ra chuỗi
+      console.log(JSON.parse(jsonNumber)); // Chuyển thành số và in ra
     </script>
 
+    <!-- Script 3: JSON string to JavaScript string -->
     <script>
-      let jsonString = `"5"`;
-      console.log(jsonString); //"string"
-      console.log(JSON.parse(jsonString)); //string
+      let jsonString = `"5"`; // Đây là chuỗi JSON
+      console.log(jsonString); // In ra chuỗi JSON
+      console.log(JSON.parse(jsonString)); // Chuyển thành chuỗi JavaScript
     </script>
 
+    <!-- Script 4: JSON boolean to JavaScript boolean -->
     <script>
-      let jsonBoolean = `true`;
-      console.log(jsonBoolean); //string
-      console.log(JSON.parse(jsonBoolean)); //boolean
+      let jsonBoolean = `true`; // Đây là chuỗi JSON
+      console.log(jsonBoolean); // In ra chuỗi
+      console.log(JSON.parse(jsonBoolean)); // Chuyển thành boolean và in ra
     </script>
 
+    <!-- Script 5: JSON null to JavaScript null -->
     <script>
-      let jsonNull = `null`;
-      console.log(jsonNull); //string
-      console.log(JSON.parse(jsonNull)); //null
+      let jsonNull = `null`; // Đây là chuỗi JSON
+      console.log(jsonNull); // In ra chuỗi
+      console.log(JSON.parse(jsonNull)); // Chuyển thành null và in ra
     </script>
-<!-- table listUsesr -->
-    <table id="listUser">
-      <tr>
-        <th>FullName</th>
-        <th>Email</th>
-        <th>Age</th>
-      </tr>
-    </table>
-    <p>div add html</p>
 
-<!-- div add inner html -->
-<div id="addHtml"></div>
+    <!-- Script 6: Rendering user data into HTML table and div -->
     <script>
-          let jsonArray = `[
-          {
-              "fullName":"vu thai",
-              "email":"thai@gmail",
-              "age":21
-          },
-          {
-              "fullName":"vu quoc",
-              "email":"quoc@gmail",
-              "age":22
-          }
-          ]`;
-          console.log(jsonArray);//string
-          let array = JSON.parse(jsonArray);
-          array.forEach(element => {
-              console.log(element);
-              // tao hang, cell
-              let tr = document.createElement("tr");
-              let td1 = document.createElement("td");
-              let td2 = document.createElement("td");
-              let td3 = document.createElement("td");
-              // gan noi dung vao
-              td1.innerHTML = element.fullName;
-              td2.innerHTML = element.email;
-              td3.innerHTML = element.age;
-              // gan cell vao hang
-              tr.appendChild(td1);
-              tr.appendChild(td2);
-              tr.appendChild(td3);
-              // gan hang vao bang
-              document.getElementById("listUser").appendChild(tr);
+      let jsonArray = `[
+        {
+          "fullName": "vu thai",
+          "email": "thai@gmail.com",
+          "age": 21
+        },
+        {
+          "fullName": "vu quoc",
+          "email": "quoc@gmail.com",
+          "age": 22
+        }
+      ]`;
 
-          });
-          let html = "";
-          array.forEach(ele => {
-              html += `<div>
+      // Chuyển chuỗi JSON thành mảng JavaScript
+      let array = JSON.parse(jsonArray);
+
+      // Hiển thị thông tin người dùng vào bảng HTML
+      let listUser = document.getElementById("listUser");
+      listUser.innerHTML = `
+        <tr>
+          <th>FullName</th>
+          <th>Email</th>
+          <th>Age</th>
+        </tr>
+      `;
+      var htmlUsers = '';
+      
+      array.forEach(ele=>{
+        htmlUsers += ` <tr>
+          <td>${ele.fullName}</td>
+          <td>${ele.email}</td>
+          <td>${ele.age}</td>
+        </tr>`
+      })
+      listUser.innerHTML += htmlUsers
+
+      // Tạo HTML từ mảng dữ liệu và hiển thị trong div
+      let html = "";
+      array.forEach((ele) => {
+        html += `
+          <div>
             <div>${ele.fullName}</div>
             <div>${ele.email}</div>
             <div>${ele.age}</div>
-        </div>`;
-          })
-          console.log(html);
-let addHtml = document.getElementById("addHtml");
-addHtml.innerHTML = html;
+          </div>
+        `;
+      });
+      let addHtml = document.getElementById("addHtml");
+      addHtml.innerHTML = html;
     </script>
   </body>
 </html>

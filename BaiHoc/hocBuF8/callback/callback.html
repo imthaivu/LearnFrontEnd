@@ -8,13 +8,13 @@
 <body>
     
     <script>
-        function myFunction(myCallback) {
-            myCallback();
+        function hamCon(){
+            console.log('hamCon')
         }
-        function myDisplayer() {
-            document.write("Hello World!");
+        function hamCha(myCallBack){
+            myCallBack();
         }
-        myFunction(myDisplayer);
+        hamCha(hamCon)
     </script>
 </body>
 </html>

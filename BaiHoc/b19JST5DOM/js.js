@@ -4,7 +4,7 @@ console.log(element);
 setTimeout(() => {
     element.classList.add('blue');
     element.classList.remove('red'); 
-    console.log(element)   
+    console.log(element)   //ul
 }, 2000);
 
 // get menu
@@ -20,10 +20,16 @@ console.log(menuItem);
 
 // get by class
 const titleByClass = document.getElementsByClassName('title');
-console.log(titleByClass);
 
 // in ra
-console.log(...titleByClass);
+// html collection
+console.log('html collection titleByClass');
+console.log(titleByClass);
+//in tung phan tu
+console.log('...titleByClass');
+console.log(...titleByClass)
+//array
+console.log('[...titleByClass]');
 console.log([...titleByClass]);
 // ep kieu html collection ve mang
 [...titleByClass].forEach(element => {
@@ -32,7 +38,7 @@ console.log([...titleByClass]);
     element.classList.remove('red');
 });
 
-// querySelector 1 obj
+// querySelector 1 obj first
 const active = document.querySelector('.box-2 .link')
 console.log(active)
 // active
@@ -44,6 +50,7 @@ const actives = document.querySelectorAll('.box-2 .link')
 actives.forEach(ele => {
     ele.classList.add('active')
 })
+
 // ----> query select lấy được tất cả id, class, css
 
 

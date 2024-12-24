@@ -1,76 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>promise 3</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <script>
-        //promise neu co 1 tham so thi no la resolve, co 2 tham so thi cai thu 2 la reject
-        // function sleep(ms){
-        //     return new Promise(function(resolve){
-        //         setTimeout(resolve, ms);
-        //     })
-        // }
-        // sleep(1000).then(()=>{
-        //     console.log('1')
-        //     return sleep(1000)
-        // }).then(()=>{
-        //     console.log('2')
-        //     return new Promise(function(resolve,reject){
-        //         reject('thong bao loi')
-        //     })
-        // }).then(()=>{
-        //     console.log('3')
-        //     return sleep(1000)
-        // }).then(()=>{
-        //     console.log('4')
-        //     return sleep(1000)
-        // }).catch((error)=>{
-        //     console.log(error);
-        // }).finally(()=>{
-        //     console.log('done')
-        // })
+      //promise neu co 1 tham so thi no la resolve, co 2 tham so thi cai thu 2 la reject
+      //   function sleep(ms) {
+      //     return new Promise(function (resolve) {
+      //       setTimeout(()=>resolve('thanhcong'), ms);
+      //     });
+      //   }
 
+      //   sleep(1000)
+      //     .then((data) => {
+      //       console.log("1", data); //1 thanh
+      //       return sleep(1000);
+      //     })
+      //     .then(() => {
+      //       console.log("2");
+      //       return new Promise(function (resolve, reject) {
+      //         resolve("thanh cong");
+      //         reject("thong bao loi");
+      //       });
+      //     })
+      //     .then((data) => {
+      //       console.log("3", data); //3 thanh cog
+      //       return sleep(1000);
+      //     })
+      //     .then(() => {
+      //       console.log("4");
+      //       return sleep(1000);
+      //     })
+      //     .catch((error) => {
+      //       console.log(error);
+      //     })
+      //     .finally(() => {
+      //       console.log("done");
+      //     });
     </script>
 
     <script>
-        // var promise = new Promise( function(resolve, reject){
-        //     resolve('success');
-        //     reject('error');
-        // })
-        // promise.then((data)=>{
-        //     console.log(data);
-            
-        // }).catch((error)=>{
-        //     console.log('error:', error);
-        // }).finally(()=>{
-        //     console.log('done');
-        // })
-
-        //cach lam nhanh
-        var promiseSuccess = Promise.resolve('success');
-        
-        promiseSuccess.then((data)=>{
-            console.log('res:', data);
-            
-        }).catch((error)=>{
-            console.log('error1:', error);
-        }).finally(()=>{
-            console.log('done success');
-        })
-        var promiseError = Promise.reject('error');
-
-        promiseError.then((data)=>{
-            console.log(data);
-            
-        }).catch((error)=>{
-            console.log('error2:', error);
-        }).finally(()=>{
-            console.log('done error');
-        })
+    //   var promise = new Promise(function (resolve, reject) {
+    //     resolve("success");
+    //     reject("error");
+    //   });
+    //   promise
+    //     .then((data) => {
+    //         console.log('data success', data)
+    //       return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //           resolve("thanh cong");
+    //         }, 2000);
+    //       });
+    //     })
+    //     .then((data) => {
+    //       console.log("data", data); //thanh cong
+    //     })
+    //     .catch((error) => {
+    //       console.log("error:", error);
+    //     })
+    //     .finally(() => {
+    //       console.log("done");
+    //     });
     </script>
-</body>
+
+    <script>
+      //cach lam nhanh
+      var promiseSuccess = Promise.resolve('success');
+
+      promiseSuccess.then((data)=>{
+          console.log('res:', data);
+
+      }).catch((error)=>{
+          console.log('error1:', error);
+      }).finally(()=>{
+          console.log('done success 1');
+      })
+
+
+
+      var promiseError = Promise.reject('error');
+
+      promiseError.then((data)=>{
+          console.log('promise 2', data);
+
+      }).catch((error)=>{
+          console.log('error2:', error);
+      }).finally(()=>{
+          console.log('done error');
+      })
+    </script>
+  </body>
 </html>

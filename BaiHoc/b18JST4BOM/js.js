@@ -7,6 +7,7 @@
 var win;
 function openWindow() {
     win = window.open("https://www.google.com", "", "width=400, height=400")
+
 }
 function closeWindow() {
     win.close()
@@ -20,6 +21,9 @@ console.log(url)
 setTimeout(()=> {
     console.log(url)
 }, 2000)
+
+
+
 
 // screen
 let screenW = window.screen.width
@@ -45,7 +49,7 @@ function setCookie(cname, cval, exday) {
     let date = new Date();
     date.setTime(date.getTime() + (exday * 24 * 60 * 60 * 1000)); // Tính toán thời gian hết hạn
     let expires = "expires=" + date.toUTCString(); // Chuyển đổi ngày thành định dạng UTC
-    document.cookie = cname + "=" + cval + "; " + expires + "; path=/"; // Thiết lập cookie
+    document.cookie = `${cname} = ${cval}; ${expires}; path=/`;
 }
 
 

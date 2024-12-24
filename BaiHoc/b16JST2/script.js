@@ -30,19 +30,15 @@ var infoUser = {
 
 
 console.log('name:', infoUser.name);
+
 //for in dung cho mot doi tuong co cac thuoc tinh
-console.log('for in----------------')
+console.log('for in 1----------------')
 for (const key in infoUser) {
     if (Object.prototype.hasOwnProperty.call(infoUser, key)) {
         const element = infoUser[key];
         console.log(key + ' ' + element);
     }
 }
-
-
-
-
-
 
 
 // array object
@@ -62,17 +58,18 @@ var listInforUser = [
 ]
 
 
+
+
 console.log('for each----------------')
 //for each
 listInforUser.forEach(element => {
-    //doc tung phan tu
     for (const key in element) {
         if (Object.prototype.hasOwnProperty.call(element, key)) {
             const value = element[key];
-            console.log(key + ' ' + value)
+            console.log(`${key} ${value}`)
         }
     }
-});
+})
 
 
 // LET use for block scope

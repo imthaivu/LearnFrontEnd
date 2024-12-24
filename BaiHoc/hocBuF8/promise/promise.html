@@ -7,57 +7,126 @@
   </head>
   <body>
     <script>
-      // cac ham async settimeout, fetch, file read, file write, request, response, ...
-      // mac du la single thread nhung van co the thuc hien nhieu tac vu cung luc
-    //   setTimeout(() => {
-    //     console.log("End");
-    //   }, 2000);
-    //   setTimeout(() => {
-    //     console.log("start");
-    //   }, 1000);
+      //   console.log("Start");
 
-        // promise param la excutor function
-        var promise = new Promise(function(resolve, reject){
-            // 
-            // resolve('Thanh cong');
-            // reject('That bai');
-            
-            //fake call api
-            resolve([{
-                name: 'thai vu',
-                age: 18
-            },
-            {
-                name: 'thai vu 2',
-                age: 19
-            }
-            ]);
-            reject('That bai');
-        });
-        promise
-        .then(function(data){//neu khong return promise thi no se async
-            console.log('1')
-            console.log(data);
+      //   setTimeout(() => {
+      //     console.log("After 1 second");
+      //   }, 1000);
 
-            return data;
-        })
-        .then(function(data){//khi ham truoc khong duoc return thi no se nhan gia tri undefined
-            console.log('2')
-            console.log(data);
-           return data;
-        })
-        .then(function(data){
-            console.log('3')
-            console.log(data);
-            return data;
-        })
-        
-        .catch(function(err){
-            console.log(err);
-        })
-        .finally(function(){
-            console.log('done');
-        })
+      //   setTimeout(() => {
+      //     console.log("After 2 seconds");
+      //   }, 2000);
+
+      //   console.log("End");
+    </script>
+
+    <script>
+      //   var promise = new Promise((resolve, reject) => {
+      //     // Fake API call
+      //     let success = true; // Thay đổi thành false để kiểm tra trường hợp lỗi
+      //     if (success) {
+      //       resolve("Operation successful");
+      //     } else {
+      //       reject("Operation failed");
+      //     }
+      //   });
+
+      //   promise
+      //     .then((result) => {
+      //       console.log("Step 1: ", result);
+      //       return "Passing to Step 2";
+      //     })
+      //     .then((data) => {
+      //       console.log("Step 2: ", data);
+      //       return "Final data";
+      //     })
+      //     .then((finalData) => {
+      //       console.log("Step 3: ", finalData);
+      //     })
+      //     .catch((error) => {
+      //       console.log("Error: ", error);
+      //     })
+      //     .finally(() => {
+      //       console.log("Operation completed.");
+      //     });
+    </script>
+
+    <script>
+      //   var promise = new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       resolve([
+      //         { name: "John Doe", age: 25 },
+      //         { name: "Jane Doe", age: 22 },
+      //       ]);
+      //     }, 2000);
+      //   });
+      //   promise
+      //   .then((users)=>{
+      //     console.log('userfetch: ', users);
+      //     var usersName = users.map((user)=>{user.name})
+      //     return usersName;
+      //     // return users.map((user)=>{user.name})
+      //   })
+      //   .then((names)=>{
+      //     console.log('names: ', names);
+      //   })
+      //   .catch((err)=>{
+      //     console.log('error: ', err);
+      //   })
+      //   .finally(()=>{
+      //     console.log('finaly: completed')
+      //   })
+    </script>
+
+    <script>
+      //   async function fetchData() {
+      //     try {
+      //       var fakeApiPromise = new Promise((resolve, reject) => {
+      //         setTimeout(() => {
+      //           resolve([
+      //             { name: "Alice", age: 30 },
+      //             { name: "Bob", age: 28 },
+      //           ]);
+      //         }, 1000);
+      //       });
+
+      //       let users = await fakeApiPromise; // Chờ dữ liệu trả về
+      //       console.log("Users fetched: ", users);
+      //       let names = users.map((user) => user.name);
+      //       console.log("User names: ", names);
+      //     } catch (error) {
+      //       console.error("Error: ", error);
+      //     } finally {
+      //       console.log("Fetching data completed.");
+      //     }
+      //   }
+
+      //   fetchData();
+    </script>
+
+    <script>
+     async function fetchData() {
+        try {
+          var fakeApi = new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve([
+                { name: "Alice", age: 30 },
+                { name: "Bob", age: 28 },
+              ]);
+            }, 1000);
+          });
+          var users = await fakeApi;
+          console.log('users: ', users);
+          var names = users.map(user => user.name);
+          console.log('names ', names)
+
+        } catch (error) {
+          console.log("err: ", error);
+        } finally {
+          console.log("complete");
+        }
+      }
+      fetchData()
     </script>
   </body>
 </html>

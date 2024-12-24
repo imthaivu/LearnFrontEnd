@@ -4,60 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>b20JST6</title>
-  </head>
-  <body>
-    <!-- onload -->
-
-    <!-- <script>
-      window.onload = function(){
-        const menu = document.getElementById('menu');
-        console.log(menu);
-      }
-    </script>
-
-    <ul id="menu">
-      <li>muc 1</li>
-      <li>muc 2</li>
-      <li>muc 3</li>
-    </ul> -->
-
-    <!-- on blur -->
-
-    <!-- <input type="text" placeholder="nhap ho ten" id="inputName">
-    <script>
-        const inputName = document.querySelector('#inputName');
-        inputName.onblur =  function(){
-            console.log('blur')
-        }
-        inputName.onfocus = function(){
-            console.log('focus')
-        }
-    </script> -->
-
-    <!-- onkeydown -->
-
-    <!-- <input type="text" placeholder="nhap ho ten" id="inputName">
-    <script>
-        const inputName = document.querySelector('#inputName');
-        inputName.onkeydown =  function(){
-            console.log('keydown')
-        }
-        inputName.onkeyup = function(){
-            console.log('keyup')
-        }
-    </script> -->
-
-    <!-- onclick -->
-    <!-- <button id="btnMenu">menu</button>
-
-    <div id="menu" class="show">
-      <ul>
-        <li>iphone</li>
-        <li>ipad</li>
-        <li>macbook</li>
-      </ul>
-      <button id="btnClose">close</button>
-    </div>
     <style>
       #menu {
         background: yellow;
@@ -77,36 +23,92 @@
         display: none;
       }
     </style>
-    <script>
-      const btnMenu = document.querySelector("#btnMenu");
-      const menu = document.querySelector("#menu");
-      const btnClose = document.querySelector("#btnClose");
-      btnMenu.onclick = function () {
-        menu.classList.add("show");
-        menu.classList.remove("unshow");
-        console.log('add show');
-      };
-      btnClose.onclick = function () {
-        menu.classList.remove("show");
-        menu.classList.add("unshow");
-        console.log('remove show');
-      };
-    </script> -->
+  </head>
+  <body>
+    <!-- html -->
+   
+    
+    <input type="text" placeholder="nhap ho ten" id="inputName" />
+    <button id="btnMenu">menu</button>
 
-    <!-- onchange -->
+    <div id="menu" class="show">
+      <ul>
+        <li>iphone</li>
+        <li>ipad</li>
+        <li>macbook</li>
+      </ul>
+      <button id="btnClose">close</button>
+    </div>
 
-    <!-- <select id="select">
+    <select id="select">
       <option value="1">iphone</option>
       <option value="2">ipad</option>
       <option value="3">macbook</option>
     </select>
+    <!--   ------------------------- -->
+
+
+    <!-- onload -->
+
     <script>
-      const select = document.querySelector("#select");
-      select.onchange = function () {
-        console.log(select.value);
+      window.onload = function () {
+        const menu = document.getElementById("menu");
+        console.log(menu);
       };
-    </script> -->
+    </script>
+
+    <!-- on blur -->
+
+    <script>
+      // const inputName = document.querySelector("#inputName");
+
+      // inputName.onblur = () => {
+      //   console.log("blur");
+      // };
+      // inputName.onfocus = () => {
+      //   console.log("focus");
+      // };
+    </script>
+
+    <!-- onkeydown -->
+
+    <script>
+        // inputName.onkeydown =  function(){
+        //     console.log('keydown')
+        // }
+        // inputName.onkeyup = function(){
+        //     console.log('keyup')
+        // }
+    </script>
+
+    <!-- onclick -->
+   
+   
+    <script>
+      // const btnMenu = document.querySelector("#btnMenu");
+      // const menu = document.querySelector("#menu");
+      // const btnClose = document.querySelector("#btnClose");
+
+      // btnMenu.onclick = function () {
+      //  menu.classList.add('show')
+      //  menu.classList.remove('unshow')
+      //   console.log('add show');
+      // };
+      // btnClose.onclick = function () {
+      //   menu.classList.remove("show");
+      //   menu.classList.add("unshow");
+      //   console.log('remove show');
+      // };
+    </script>
+
+    <!-- onchange -->
 
     
+    <script>
+      const select = document.querySelector("#select");
+      select.onchange = ()=>{
+        console.log(select.value)
+      }
+    </script>
   </body>
 </html>

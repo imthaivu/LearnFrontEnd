@@ -1,7 +1,8 @@
 import {sum} from './sum.js'
 import {a, b} from './constant.js'
-import thongBao,{tong as tong2, hieu as hieu2, tich as tich2, thuong as thuong2} from './tinhToan.js'
-
+// import thongBao,{tong as tong2, hieu as hieu2, tich as tich2, thuong as thuong2} from './tinhToan.js'
+import thongBao from './tinhToan.js'
+import { tong as tong2, hieu as hieu2, tich as tich2, thuong as thuong2 } from './tinhToan.js'
 console.log(sum(a,b)) // 30
 
 // tinh toan

@@ -7,41 +7,57 @@
   </head>
   <body>
     <script>
-          var course = ['html', 'css', 'js'];
+      // var course = ["html", "css", "js"];
+      // // Sử dụng map để tạo mảng các chuỗi HTML
+      // var htmls = course.map(course => {
+      //   return `<h2>${course}</h2>`;
+      // });
+      // console.log(htmls)//array h2 html
+      // console.log(htmls.join("")); // In ra chuỗi HTML kết quả
+    </script>
 
-          // ------------- vi du 1
-      //    var htmls = course.map(function(course){
-      //         return `<h2>${course}</h2>`;
-      //     })
-      //     console.log(htmls.join(''));
-          // -------------vi du 2
-          // Array.prototype.map2 = function(callback){
-          //     var output = [], arrayLength = this.length;
-          //     for(var i = 0; i < arrayLength; i++){
-          //         var result = callback(this[i]);
-          //         output.push(result);
-          //     }
-          //     return output;
-          // }
-          Array.prototype.map2 = function(callback){
-              var output = [];//la mang
-              arrlength = this.length;//? la gi
-              for (let i = 0; i < arrlength; i++) {
-                  const element = callback(this[i]);
-                  output.push(element);
+    <script>
+      // // Tạo mảng dữ liệu
+      // var course = ["html", "css", "js"];
 
-              }
-              return output;
-          }
-          // khai bao ham
-          function ham1(course){
-              return `<h2>${course}</h2>`;
-          }
-          // hang data
-          var htmls2 = course.map2(ham1)
-          console.log(htmls2)
+      // // Tạo phương thức map2
+      // Array.prototype.map2 = function (callback) {
+      //   var output = []; // Tạo mảng kết quả
+      //   var arrLength = this.length; // Độ dài mảng hiện tại
+      //   for (var i = 0; i < arrLength; i++) {
+      //     var result = callback(this[i]); // Gọi hàm callback
+      //     output.push(result); // Thêm kết quả vào mảng
+      //   }
+      //   return output; // Trả về mảng kết quả
+      // };
 
-     
+      // // Hàm callback dùng cho map2
+      // function createHTML(course) {
+      //   return `<h2>${course}</h2>`;
+      // }
+
+      // // Sử dụng map2 với hàm callback
+      // var htmls2 = course.map2(createHTML);
+      // console.log(htmls2); // In ra mảng kết quả
+    </script>
+    <script>
+      var course = ['html', 'css', 'js']
+      //map 2
+      Array.prototype.map2 = function(callback){
+        var output = [];
+        this.forEach(ele => {
+          var eleHtml = callback(ele);
+          output.push(eleHtml);
+        })
+        return output;
+      }
+      //create html
+      function createHTML(ele){
+        return `<h2>${ele}</h2>`
+      }
+      //run
+      var courseHtml = course.map2(createHTML);
+      console.log(courseHtml)
     </script>
   </body>
 </html>

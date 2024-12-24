@@ -6,18 +6,24 @@
     <title>b19JST5 cnt</title>
   </head>
   <body>
-    <h2 id="val-h2">
+    <h2 id="val-h2" data-more="data-more-value">
       <span>h2 span 1</span>
       <span>h2 span 2</span>
       <span>h2 span 3</span>
     </h2>
 
-    <div class="product-item" data-id="1234" data-category="ipad">anh tieu de gia</div>
-    <div class="product-item" data-id="1235" data-category="ipad">anh tieu de gia</div>
-    <div class="product-item" data-id="1235" data-category="ipad">anh tieu de gia</div>
+    <div class="product-item" data-id="data-id-1" data-category="ipad">
+      anh tieu de gia
+    </div>
+    <div class="product-item" data-id="data-id-2" data-category="ipad">
+      anh tieu de gia
+    </div>
+    <div class="product-item" data-id="data-id-3" data-category="ipad">
+      anh tieu de gia
+    </div>
 
     <!-- them style -->
-     <h3 id="h3">noi dung the h3</h3>
+    <h3 id="h3">noi dung the h3</h3>
     <script>
       const h2 = document.querySelector("#val-h2");
 
@@ -29,12 +35,17 @@
       // console.log(h2.innerHTML); // Sửa từ getHTML() thành innerHTML
 
       // Lấy nội dung văn bản
+      console.log("h2.textContent"); // Lấy nội dung văn bản
+
       console.log(h2.textContent); // Lấy nội dung văn bản
+      console.log("h2.innerText"); // Lấy nội dung hiển thị trên một dòng
+
       console.log(h2.innerText); // Lấy nội dung hiển thị trên một dòng
 
-      // Lấy thuộc tính 'id'
-      console.log(h2.getAttribute("id")); // Lấy giá trị của thuộc tính 'id'
+      // Lấy value cua thuộc tính 'id'
 
+      console.log(h2.getAttribute("id")); // Lấy giá trị của thuộc tính 'id'
+      console.log(h2.getAttribute("data-more"));
       // Chỉnh sửa thuộc tính 'id'
       h2.setAttribute("id", "noi dung moi"); // Đặt giá trị mới cho thuộc tính 'id'
       console.log(h2.getAttribute("id")); // Kiểm tra lại giá trị của thuộc tính 'id' sau khi chỉnh sửa
@@ -43,23 +54,25 @@
       //   console.log(productItems)
       let cart = [];
       productItems.forEach((ele) => {
-        const dataId = ele.getAttribute('data-id');
+        const dataId = ele.getAttribute("data-id");
         cart.push(dataId);
-        console.log(dataId);
       });
-      cart.forEach(ele=> {
-        console.log(ele)
-      })
 
-      productItems.forEach(ele => {
-        ele.setAttribute('data-category', 'iphone');
-      })
-      console.log(productItems[0]);
-      
-      const h3 = document.querySelector('#h3')
-      h3.style.color="red";
-        h3.style.fontSize="30px";
-        console.log(h3);
+      cart.forEach((ele) => {
+        console.log(ele);
+      });
+
+      productItems.forEach((ele) => {
+        ele.setAttribute("data-category", "iphone"); //cac attribute do co vallue = iphone
+      });
+      productItems.forEach((ele) => {
+        console.log(ele.getAttribute("data-category"));
+      });
+
+      const h3 = document.querySelector("#h3");
+      h3.style.color = "red"
+      h3.style.fontSize = '30px'
+      console.log(h3);
     </script>
   </body>
 </html>

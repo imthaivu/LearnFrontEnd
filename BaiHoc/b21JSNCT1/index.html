@@ -29,10 +29,8 @@
       // var b;
       // console.log(b);
       // b = 2;
-
       // c = 10;
       // console.log(c);
-      // var  c;
     </script>
     <!-- // hoisting cho function -->
     <script>
@@ -44,30 +42,32 @@
       //    |
       //    v
       // var sum;
-      // console.log(sum(1,2));
       // sum = function(a,b){
       //     return a+b;
       // }
+      // console.log(sum(1,2));
     </script>
 
     <!-- // this -->
     <script>
-      //   console.log(this); //window
-      //   console.log(this === window);
-      //   function checkThis() {
-      //     console.log(this);
-      //   }
-      //   console.log('goi ham checkThis()');
-      //   checkThis();
-      //   var obj = {
-      //     // "use strict";
+      console.log(this); //window
+      console.log(this === window);
+      function checkThis() {
+        console.log(this);
+      }
+      console.log("goi ham checkThis()");
+      checkThis();
+      console.log("goi ham obj.checkthis");
+      var obj = {
+        // "use strict";
 
-      //     checkThis: function () {
-      //       console.log(this);
-      //     },
-      //     thai:10
-      //   };
-      //   obj.checkThis();
+        checkThis: function () {
+          console.log(this); //obj
+        },
+        thai: 10,
+      };
+      obj.checkThis();
+      console.log(obj.thai);
     </script>
 
     <!-- // this trong event -->
@@ -103,8 +103,11 @@
         getFullName: function () {
           console.log(this.fullName);
         },
-        getAge: () => {
-          console.log(this.age);// this = window
+        getAge: () => {//trong arrow function thi thís la window
+          console.log(this.age); // this = window
+        },
+        getAge2: function(){
+          console.log(this.age);
         },
         cccd: {
           number: 123456789,
@@ -114,11 +117,15 @@
           },
         },
       };
+      console.log('get full name')
       info.getFullName();
       console.log(info.fullName);
       console.log(info.cccd.number);
       info.cccd.getCCCD();
-        info.getAge();
+      console.log('get age')
+      info.getAge();
+      console.log('get age 2')
+      info.getAge2();
     </script>
   </body>
 </html>
